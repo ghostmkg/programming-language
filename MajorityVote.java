@@ -10,9 +10,9 @@
 // Input: nums = [1, 2, 3, 4, 5]
 // Output: [-1]
 // Explanation: no candidate occur more than n/3 times.
-
-class Solution {
-    public List<Integer> findMajority(List<Integer> nums) {
+import java.util.*;
+class MajorityVote {
+    static List<Integer> findMajority(List<Integer> nums) {
     int count1 = 0, count2 = 0, candidate1 = 0, candidate2 = 0;
 
     for (int num : nums) {

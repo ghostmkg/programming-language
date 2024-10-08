@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Leetcode_567",
+      "request": "launch",
+      "mainClass": "Leetcode_567",
+      "projectName": "programming-language_61e5c0bb"
+    },
+    {
+      "type": "java",
       "name": "Leetcode_1813",
       "request": "launch",
       "mainClass": "Leetcode_1813",

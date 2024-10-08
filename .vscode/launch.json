@@ -2,6 +2,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "Leetcode_1963",
+      "request": "launch",
+      "mainClass": "Leetcode_1963",
+      "projectName": "programming-language_61e5c0bb"
+    },
+    {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",

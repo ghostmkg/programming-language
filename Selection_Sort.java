@@ -1,3 +1,4 @@
+import java.util.*;
 public class Selection_Sort {
     public static void main(String[] args) {
         int[]arr={1,22,3,42,5,2,94};

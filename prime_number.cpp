@@ -1,4 +1,4 @@
-git #include<bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 #define v vector<int>
 #define pb push_back

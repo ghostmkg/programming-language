@@ -12,5 +12,5 @@ def generate_fibonacci_series(N):
             second_last_term = last_term
             last_term = curr_term
 
-n = int(input())
-generate_fibonacci_series(n)
+t = int(input())
+generate_fibonacci_series(t)

@@ -1,6 +1,7 @@
 #include<iostream>
 using namespace std;
 
+
 int main(){
 
     int num;
@@ -18,4 +19,6 @@ cout<<"The factorial of  "<<num<< " is " << fact<<endl;
 
 
     return 0 ;
+\
+
 }

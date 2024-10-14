@@ -1,0 +1,52 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Leetcode_567",
+      "request": "launch",
+      "mainClass": "Leetcode_567",
+      "projectName": "programming-language_61e5c0bb"
+    },
+    {
+      "type": "java",
+      "name": "Leetcode_1813",
+      "request": "launch",
+      "mainClass": "Leetcode_1813",
+      "projectName": "programming-language_61e5c0bb"
+    },
+    {
+      "type": "java",
+      "name": "Leetcode_2696",
+      "request": "launch",
+      "mainClass": "Leetcode_2696",
+      "projectName": "programming-language_61e5c0bb"
+    },
+    {
+      "type": "java",
+      "name": "Leetcode_1963",
+      "request": "launch",
+      "mainClass": "Leetcode_1963",
+      "projectName": "programming-language_61e5c0bb"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "c:/programming-language",
+      "program": "c:/programming-language/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}

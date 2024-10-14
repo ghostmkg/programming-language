@@ -19,10 +19,6 @@ public class DifferentPatterns_09 {
         }
         System.out.println("");   
     }
-    System.out.println("Here We are Print 4 rows Star");
-    for(int i =1;i<=4;i++){
-        System.out.println("*");
-    }
 
 
 

@@ -1,3 +1,4 @@
+
 def min_max_digits(n):
 
     digits = [int(digit) for digit in str(n)]

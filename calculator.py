@@ -12,38 +12,59 @@ def divide(x, y):
         return "Error! Division by zero."
     return x / y
 
+def get_number(prompt):
+    while True:
+        try:
+            return float(input(prompt))
+        except ValueError:
+            print("Invalid input! Please enter a valid number.")
+
 def calculator():
-    print("Select operation:")
-    print("1. Add")
-    print("2. Subtract")
-    print("3. Multiply")
-    print("4. Divide")
+    print("Welcome to the Simple Calculator!")
+    print("--------------------------------")
+    print("You can perform the following operations:")
+    print("1. Addition (+)")
+    print("2. Subtraction (-)")
+    print("3. Multiplication (*)")
+    print("4. Division (/)")
+    print("Type 'exit' anytime to quit the calculator.")
+    print("--------------------------------")
+
+    operations = {
+        '1': add,
+        '2': subtract,
+        '3': multiply,
+        '4': divide
+    }
+
+    operation_symbols = {
+        '1': '+',
+        '2': '-',
+        '3': '*',
+        '4': '/'
+    }
 
     while True:
-        choice = input("Enter choice (1/2/3/4): ")
+        choice = input("\nSelect an operation (1/2/3/4): ").strip().lower()
 
-        if choice in ('1', '2', '3', '4'):
-            try:
-                num1 = float(input("Enter first number: "))
-                num2 = float(input("Enter second number: "))
-            except ValueError:
-                print("Invalid input! Please enter numeric values.")
-                continue
-
-            if choice == '1':
-                print(f"{num1} + {num2} = {add(num1, num2)}")
-            elif choice == '2':
-                print(f"{num1} - {num2} = {subtract(num1, num2)}")
-            elif choice == '3':
-                print(f"{num1} * {num2} = {multiply(num1, num2)}")
-            elif choice == '4':
-                print(f"{num1} / {num2} = {divide(num1, num2)}")
+        if choice == 'exit':
+            print("Thank you for using the calculator. Goodbye!")
+            break
         
-            next_calculation = input("Do you want to perform another calculation? (yes/no): ")
-            if next_calculation.lower() != 'yes':
-                break
+        if choice in operations:
+            num1 = get_number("Enter the first number: ")
+            num2 = get_number("Enter the second number: ")
+
+            result = operations[choice](num1, num2)
+            symbol = operation_symbols[choice]
+            print(f"\nResult: {num1} {symbol} {num2} = {result}")
         else:
-            print("Invalid input! Please select a valid operation.")
+            print("Invalid option! Please select a valid operation (1, 2, 3, or 4).")
+
+        next_calculation = input("\nWould you like to perform another calculation? (yes/no): ").strip().lower()
+        if next_calculation != 'yes':
+            print("Thank you for using the calculator. Goodbye!")
+            break
 
 if __name__ == "__main__":
     calculator()

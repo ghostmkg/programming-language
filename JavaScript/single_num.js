@@ -1,10 +1,10 @@
 // 👉🏻 Q. finding the unique/single element from an array.
 function singleNumber(nums){
-  let result=0;
+  let ans=0;
   for(let num of nums){
-      result ^= num; // XOR all numbers
+      ans ^= num; // XOR all numbers
   }
-  return result;  // The single number
+  return ans;  // The single number
 }
 
 console.log(singleNumber([4, 1, 2, 1, 2])); // Output: 4

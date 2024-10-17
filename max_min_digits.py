@@ -7,3 +7,4 @@ def min_max_digits(n):
     return min_digit,max_digit
 n=int(input())
 print(min_max_digits(n))
+

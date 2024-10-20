@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Linear_search {
 
     // Function to perform linear search
@@ -12,12 +14,38 @@ public class Linear_search {
         return -1;  // Return -1 if the target element is not found
     }
 
-    public static void main(String[] args) {
-        // Example array
-        int[] arr = {5, 8, 1, 3, 10, 6, 2};
+    // Function to take input from the user
+    public static int[] getInputArray() {
+        Scanner scanner = new Scanner(System.in);
 
-        // Target element to search for
-        int target = 10;
+        System.out.print("Enter the size of the array: ");
+        int size = scanner.nextInt();
+
+        int[] arr = new int[size];
+
+        System.out.println("Enter the elements of the array:");
+        for (int i = 0; i < size; i++) {
+            arr[i] = scanner.nextInt();
+        }
+
+        return arr;
+    }
+
+    public static void main(String[] args) {
+        // Take array input from the user
+        int[] arr = getInputArray();
+
+        // Display the array to the user
+        System.out.println("The array is:");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+
+        // Input target element to search for
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the target element to search for: ");
+        int target = scanner.nextInt();
 
         // Call linearSearch function and store the result
         int result = linearSearch(arr, target);
@@ -30,6 +58,7 @@ public class Linear_search {
         }
     }
 }
+
 
 //👉🏻logic of code
 // The for loop iterates over each element in the array (arr).

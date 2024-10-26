@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "NumberGuessingGame",
+      "request": "launch",
+      "mainClass": "Cube_3D.NumberGuessingGame",
+      "projectName": "programming-language_d857f598"
+    },
+    {
+      "type": "java",
       "name": "Game_Rock_paper_Scissor",
       "request": "launch",
       "mainClass": "Cube_3D.Game_Rock_paper_Scissor",

@@ -1,5 +1,0 @@
-P=int(input())  # Principal Amount
-r=int(input())  # Rate of interest
-n=int(input())  # Time period 
-CI=P*(1+r/100)**n-P    # CI - Compound Interest
-print(round(CI,2))

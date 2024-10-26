@@ -1,72 +1,57 @@
-package Assignment;
-
-public abstract class Person extends MaintainFinance
+package CMS;
+public abstract class Person 
 {
-    // Instance variables
-    private String name;
-    private String id;
+    private String name;    
+    private String cnic;    
+    private String contact;    
     private String address;
-    private String contact;
 
-    // Constructor
-    public Person (String name , String id , String address , String contact)
-    {
+    public Person(String name, String cnic, String contact, String address) {
         this.name = name;
-        this.id = id;
-        this.address = address;
+        this.cnic = cnic;
         this.contact = contact;
+        this.address = address;
     }
 
-    // Getter and setters for each instance variable
-
-    public void setname(String name)
-    {
-        this.name = name;
-    }
-    public String getname()
-    {
+    public String getName() {
         return name;
     }
 
-
-    public void setid(String id)
-    {
-        this.id = id;
-    }
-    public String getid()
-    {
-        return id;
+    public void setName(String name) {
+        this.name = name;
     }
 
-
-    public void setaddress(String address)
-    {
-        this.address = address;
-    }
-    public String getaddress()
-    {
-        return address;
+    public String getCnic() {
+        return cnic;
     }
 
-    
-    public void setcontact(String contact)
-    {
-        this.contact = contact;
+    public void setCnic(String cnic) {
+        this.cnic = cnic;
     }
-    public String getcontact()
-    {
+
+    public String getContact() {
         return contact;
     }
 
+    public void setContact(String contact) {
+        this.contact = contact;
+    }
 
-    // ToString method to return values 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+     public abstract String account();
 
     public String toString()
     {
-        return String.format("%-25s%s%n%-25s%s%n%-25s%s%n%-25s%s%n",
-            "Name :", name ,
-            "ID :", id ,
-            "Address :", address ,
-            "Contatc :" , contact );
+        return String.format("-------Personal Details-------%n%-20s%s%n%-20s%s%n%-20s%s%n%-20s%s%n","Name : ",name,"Contact : "
+        ,contact, "Address : ",address ,"Cnic No. : ",cnic);
     }
+    
+    
 }

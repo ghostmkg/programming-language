@@ -1,8 +1,0 @@
-def sum_of_evens_in_range(a, b):
- s=0
- start=a
- if start%2==1:
-     start=a+1
- for i in range(start,b+1,2):
-          s=s+i
- return s

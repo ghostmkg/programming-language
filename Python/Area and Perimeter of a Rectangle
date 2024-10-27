@@ -1,8 +1,0 @@
-side1 = input("What is the length of your rectangle?")
-side2 = input("What is the width of your rectangle?")
-
-p = (2*side1) + (2*side2)
-a = side1 * side2
-
-print("The perimeter of your rectangle is " + p)
-print("The area of your rectangle is " + a)

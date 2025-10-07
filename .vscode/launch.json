@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "ParenthesisChecker",
+      "request": "launch",
+      "mainClass": "ParenthesisChecker",
+      "projectName": "programming-language_71471ea2"
+    },
+    {
+      "type": "java",
       "name": "HeapSort",
       "request": "launch",
       "mainClass": "HeapSort",

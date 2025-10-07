@@ -51,7 +51,9 @@ class HuffmanCoding {
         if (node == null) return;
 
         if (node.left == null && node.right == null) {
-            huffmanCode.put(node.character, code);
+            // Handle single character case - assign code "0" if empty
+            huffmanCode.put(node.character, code.isEmpty() ? "0" : code);
+            return;
         }
 
         generateCodes(node.left, code + "0", huffmanCode);
@@ -60,6 +62,10 @@ class HuffmanCoding {
 
     // Encode the input text
     public static String encode(String text) {
+        if (text == null || text.isEmpty()) {
+            return "";
+        }
+        
         buildHuffmanTree(text);
         Map<Character, String> huffmanCode = new HashMap<>();
         generateCodes(root, "", huffmanCode);
@@ -74,6 +80,10 @@ class HuffmanCoding {
 
     // Decode the encoded text
     public static String decode(String encodedText) {
+        if (encodedText == null || encodedText.isEmpty() || root == null) {
+            return "";
+        }
+        
         StringBuilder decodedText = new StringBuilder();
         Node currentNode = root;
 

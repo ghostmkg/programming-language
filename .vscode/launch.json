@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "ArmstrongNumber",
+      "request": "launch",
+      "mainClass": "ArmstrongNumber",
+      "projectName": "programming-language_71471ea2"
+    },
+    {
+      "type": "java",
       "name": "ParenthesisChecker",
       "request": "launch",
       "mainClass": "ParenthesisChecker",

@@ -20,3 +20,4 @@ if (isAnagram(s1, s2)) {
 } else {
     console.log(`${s1} and ${s2} are NOT anagrams.`);
 } 
+

@@ -1,9 +1,0 @@
-p=int(input())
-q=int(input())
-r=int(input())
-if p==q and q==r and r==p:
-  print('Equilateral triangle')
-elif p==q!=r or q==r!=p or p==r!=q:
- print('Isosceles triangle')
-else:
-  print('Scalene triangle')

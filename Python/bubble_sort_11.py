@@ -1,16 +1,39 @@
-# 📌 Bubble Sort in Python
+public class BubbleSortExample {
+    public static void main(String[] args) {
+        int[] arr = {5, 1, 4, 2, 8};
+        
+        bubbleSort(arr);
+        
+        System.out.println("Sorted array:");
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+    }
 
-def bubble_sort(arr):
-    n = len(arr)
-    # Traverse through all array elements
-    for i in range(n - 1):
-        for j in range(0, n - i - 1):
-            # Swap if the element found is greater than the next element
-            if arr[j] > arr[j + 1]:
-                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    // Bubble Sort function
+    public static void bubbleSort(int[] arr) {
+        int n = arr.length;
+        boolean swapped;
 
-numbers = [64, 34, 25, 12, 22, 11, 90]
-print("Unsorted list:", numbers)
+        // Outer loop - number of passes
+        for (int i = 0; i < n - 1; i++) {
+            swapped = false; // flag to detect any swap in this pass
+            
+            // Inner loop - compare adjacent elements
+            for (int j = 0; j < n - 1 - i; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    // swap arr[j] and arr[j + 1]
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
 
-bubble_sort(numbers)
-print("Sorted list:", numbers)
+                    swapped = true;
+                }
+            }
+
+            // If no swaps occurred, array is already sorted
+            if (!swapped)
+                break;
+        }
+    }
+}

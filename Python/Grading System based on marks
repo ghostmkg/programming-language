@@ -1,0 +1,13 @@
+marks = int(input("Enter the marks of the student:-")) 
+if(marks>= 90):
+   Grade="A"
+elif(marks >=80 and marks<90 ):
+   Grade= "B"
+elif(marks>=70 and marks<80):
+    Grade= "C"
+elif(70>marks):
+    Grade ="D"
+else:
+   Grade="fail"
+    
+print("the grade of student is:-",Grade)

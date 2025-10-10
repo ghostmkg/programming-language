@@ -1,0 +1,45 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "ArmstrongNumber",
+      "request": "launch",
+      "mainClass": "ArmstrongNumber",
+      "projectName": "programming-language_71471ea2"
+    },
+    {
+      "type": "java",
+      "name": "ParenthesisChecker",
+      "request": "launch",
+      "mainClass": "ParenthesisChecker",
+      "projectName": "programming-language_71471ea2"
+    },
+    {
+      "type": "java",
+      "name": "HeapSort",
+      "request": "launch",
+      "mainClass": "HeapSort",
+      "projectName": "programming-language_71471ea2"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "c:/Users/anwes/programming-language",
+      "program": "c:/Users/anwes/programming-language/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}

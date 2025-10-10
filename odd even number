@@ -1,0 +1,9 @@
+number = int(input("enter your number:-"))
+rem = number%2
+if(rem==0 ):
+    print("EVEN")
+else:
+    print("ODD")    
+    
+print("code ended")
+

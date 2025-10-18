@@ -3,6 +3,34 @@
   "configurations": [
     {
       "type": "java",
+      "name": "ArmstrongInRange",
+      "request": "launch",
+      "mainClass": "ArmstrongInRange",
+      "projectName": "programming-language_a42f5194"
+    },
+    {
+      "type": "java",
+      "name": "PalindromeNumber",
+      "request": "launch",
+      "mainClass": "PalindromeNumber",
+      "projectName": "programming-language_a42f5194"
+    },
+    {
+      "type": "java",
+      "name": "LargestInArray",
+      "request": "launch",
+      "mainClass": "LargestInArray",
+      "projectName": "programming-language_a42f5194"
+    },
+    {
+      "type": "java",
+      "name": "PerfectNumber",
+      "request": "launch",
+      "mainClass": "PerfectNumber",
+      "projectName": "programming-language_a42f5194"
+    },
+    {
+      "type": "java",
       "name": "ArmstrongNumber",
       "request": "launch",
       "mainClass": "ArmstrongNumber",

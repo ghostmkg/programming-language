@@ -1,0 +1,28 @@
+def LeapYear(n):
+  """Checks if a given year is a leap year.
+
+  Args:
+    n: The year to check.
+
+  Returns:
+    True if the year is a leap year, False otherwise.
+  """
+
+  # A leap year is divisible by 4
+  if n % 4 == 0:
+    # But not divisible by 100 unless also divisible by 400
+    if n % 100 != 0 or n % 400 == 0:
+      return "YES"
+  return "NO"
+
+# Get the year from the user (optional)
+# year = int(input("Enter the year: "))
+
+# Check if the year is a leap year
+# is_leap_year = LeapYear(year)
+# print(is_leap_year)
+
+# Example usage with a fixed year
+year =int(input())
+is_leap_year = LeapYear(year)
+print(is_leap_year)

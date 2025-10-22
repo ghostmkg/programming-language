@@ -1,3 +1,22 @@
+"""
+You are given an n x m binary matrix grid, where 0 represents a sea cell and 1 represents a land cell.
+
+A move consists of walking from one land cell to another adjacent (4- directionally) land cell or walking off the boundary of the grid.
+
+Return the number of land cells in grid for which we cannot walk off the boundary of the grid in any number of moves.
+
+Example
+Input:
+4 4
+0 0 0 0
+1 0 1 0
+0 1 1 0
+0 0 0 0
+Output:
+3
+"""
+
+
 def numEnclaves(grid):
     assert grid and grid[0], "Grid must not be empty"
     rows, cols = len(grid), len(grid[0])

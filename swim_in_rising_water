@@ -1,0 +1,28 @@
+class Solution:
+    def swimInWater(self, grid: List[List[int]]) -> int:
+        m,n=len(grid),len(grid[0])
+        edges=[]
+        for i in range(m):
+            for j in range(n):
+                if i>0:
+                    edges.append((max(grid[i][j],grid[i-1][j]),i*n+j,(i-1)*n+j))
+                if j>0:
+                    edges.append((max(grid[i][j],grid[i][j-1]),i*n+j,i*n+j-1))
+
+        edges.sort()
+        parent = list(range(m * n))
+
+        def find(x):
+            if parent[x]!=x:
+                parent[x]=find(parent[x])
+            return parent[x]
+
+        def union(x, y):
+            parent[find(x)]=find(y)
+
+        for cost,u,v in edges:
+            union(u,v)
+            if find(0)==find(m*n-1):
+                return cost
+
+        return grid[0][0]

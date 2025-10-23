@@ -2,18 +2,22 @@
 #include <vector>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    int singleNumber(vector<int>& nums) {
+    int singleNumber(vector<int> &nums)
+    {
         int ans = 0;
-        for (int i = 0; i < nums.size(); i++) {
-            ans = ans ^ nums[i];  // XOR cancels out duplicates
+        for (int i = 0; i < nums.size(); i++)
+        {
+            ans = ans ^ nums[i]; // XOR cancels out duplicates
         }
         return ans;
     }
 };
 
-int main() {
+int main()
+{
     Solution sol;
 
     // Example input where every number appears twice except one

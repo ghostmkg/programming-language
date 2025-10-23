@@ -3,45 +3,24 @@
   "configurations": [
     {
       "type": "java",
-      "name": "Game_Rock_paper_Scissor",
+      "name": "ArmstrongNumber",
       "request": "launch",
-      "mainClass": "Cube_3D.Game_Rock_paper_Scissor",
-      "projectName": "programming-language_d857f598"
+      "mainClass": "ArmstrongNumber",
+      "projectName": "programming-language_71471ea2"
     },
     {
       "type": "java",
-      "name": "BankAccount",
+      "name": "ParenthesisChecker",
       "request": "launch",
-      "mainClass": "Cube_3D.BankAccount",
-      "projectName": "programming-language_d857f598"
+      "mainClass": "ParenthesisChecker",
+      "projectName": "programming-language_71471ea2"
     },
     {
       "type": "java",
-      "name": "Leetcode_567",
+      "name": "HeapSort",
       "request": "launch",
-      "mainClass": "Leetcode_567",
-      "projectName": "programming-language_61e5c0bb"
-    },
-    {
-      "type": "java",
-      "name": "Leetcode_1813",
-      "request": "launch",
-      "mainClass": "Leetcode_1813",
-      "projectName": "programming-language_61e5c0bb"
-    },
-    {
-      "type": "java",
-      "name": "Leetcode_2696",
-      "request": "launch",
-      "mainClass": "Leetcode_2696",
-      "projectName": "programming-language_61e5c0bb"
-    },
-    {
-      "type": "java",
-      "name": "Leetcode_1963",
-      "request": "launch",
-      "mainClass": "Leetcode_1963",
-      "projectName": "programming-language_61e5c0bb"
+      "mainClass": "HeapSort",
+      "projectName": "programming-language_71471ea2"
     },
     {
       "name": "C/C++ Runner: Debug Session",
@@ -50,8 +29,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/programming-language",
-      "program": "c:/programming-language/build/Debug/outDebug",
+      "cwd": "c:/Users/anwes/programming-language",
+      "program": "c:/Users/anwes/programming-language/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

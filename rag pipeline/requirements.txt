@@ -1,0 +1,6 @@
+pdfplumber >= 0.10.0
+langchain  >= 0.1.17
+langchain_community >=0.0.11
+chromadb>=0.4.24
+python-dotenv>=1.0.0
+langchain-googlegenai

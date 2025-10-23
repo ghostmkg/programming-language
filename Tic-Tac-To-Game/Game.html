@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 450px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .scoreboard {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            background: #f3f4f6;
+            padding: 10px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .score-box {
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .score-box.x {
+            background: #dbeafe;
+        }
+
+        .score-box.draw {
+            background: #e5e7eb;
+        }
+
+        .score-box.o {
+            background: #fee2e2;
+        }
+
+        .score-label {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .score-box.x .score-label {
+            color: #2563eb;
+        }
+
+        .score-box.draw .score-label {
+            color: #6b7280;
+        }
+
+        .score-box.o .score-label {
+            color: #dc2626;
+        }
+
+        .score-value {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        .status {
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .status.winner {
+            color: #16a34a;
+            animation: pulse 1s infinite;
+        }
+
+        .status.draw {
+            color: #ca8a04;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .cell {
+            aspect-ratio: 1;
+            border: none;
+            border-radius: 15px;
+            font-size: 3rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .cell:not(.x):not(.o) {
+            background: #f3f4f6;
+            color: #d1d5db;
+        }
+
+        .cell:not(.x):not(.o):hover {
+            background: #e5e7eb;
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .cell.x {
+            background: #3b82f6;
+            color: white;
+            cursor: not-allowed;
+        }
+
+        .cell.o {
+            background: #ef4444;
+            color: white;
+            cursor: not-allowed;
+        }
+
+        .cell:disabled {
+            cursor: not-allowed;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        button.btn {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: white;
+        }
+
+        .btn-new {
+            background: #2563eb;
+        }
+
+        .btn-new:hover {
+            background: #1d4ed8;
+        }
+
+        .btn-reset {
+            background: #4b5563;
+        }
+
+        .btn-reset:hover {
+            background: #374151;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tic-Tac-Toe</h1>
+        
+        <div class="scoreboard">
+            <div class="score-box x">
+                <div class="score-label">X</div>
+                <div class="score-value" id="score-x">0</div>
+            </div>
+            <div class="score-box draw">
+                <div class="score-label">Draw</div>
+                <div class="score-value" id="score-draw">0</div>
+            </div>
+            <div class="score-box o">
+                <div class="score-label">O</div>
+                <div class="score-value" id="score-o">0</div>
+            </div>
+        </div>
+
+        <div class="status" id="status">Next: X</div>
+
+        <div class="board" id="board">
+            <button class="cell" data-index="0"></button>
+            <button class="cell" data-index="1"></button>
+            <button class="cell" data-index="2"></button>
+            <button class="cell" data-index="3"></button>
+            <button class="cell" data-index="4"></button>
+            <button class="cell" data-index="5"></button>
+            <button class="cell" data-index="6"></button>
+            <button class="cell" data-index="7"></button>
+            <button class="cell" data-index="8"></button>
+        </div>
+
+        <div class="buttons">
+            <button class="btn btn-new" onclick="newGame()">New Game</button>
+            <button class="btn btn-reset" onclick="resetScores()">Reset Scores</button>
+        </div>
+    </div>
+
+    <script>
+        var board = [null, null, null, null, null, null, null, null, null];
+        var isXNext = true;
+        var scores = { x: 0, o: 0, draws: 0 };
+        var gameActive = true;
+
+        var cells = document.querySelectorAll('.cell');
+        var statusDiv = document.getElementById('status');
+
+        cells.forEach(function(cell) {
+            cell.addEventListener('click', function() {
+                handleClick(cell);
+            });
+        });
+
+        function handleClick(cell) {
+            var index = parseInt(cell.dataset.index);
+            
+            if (board[index] || !gameActive) return;
+
+            var currentPlayer = isXNext ? 'X' : 'O';
+            board[index] = currentPlayer;
+            cell.textContent = currentPlayer;
+            cell.classList.add(currentPlayer.toLowerCase());
+            cell.disabled = true;
+
+            var winner = calculateWinner();
+            if (winner) {
+                statusDiv.textContent = '🎉 Player ' + winner + ' Wins! 🎉';
+                statusDiv.className = 'status winner';
+                scores[winner.toLowerCase()]++;
+                updateScores();
+                gameActive = false;
+            } else if (board.every(function(c) { return c !== null; })) {
+                statusDiv.textContent = "It's a Draw! 🤝";
+                statusDiv.className = 'status draw';
+                scores.draws++;
+                updateScores();
+                gameActive = false;
+            } else {
+                isXNext = !isXNext;
+                statusDiv.textContent = 'Next: ' + (isXNext ? 'X' : 'O');
+                statusDiv.className = 'status';
+            }
+        }
+
+        function calculateWinner() {
+            var lines = [
+                [0, 1, 2], [3, 4, 5], [6, 7, 8],
+                [0, 3, 6], [1, 4, 7], [2, 5, 8],
+                [0, 4, 8], [2, 4, 6]
+            ];
+
+            for (var i = 0; i < lines.length; i++) {
+                var line = lines[i];
+                var a = line[0];
+                var b = line[1];
+                var c = line[2];
+                if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+                    return board[a];
+                }
+            }
+            return null;
+        }
+
+        function updateScores() {
+            document.getElementById('score-x').textContent = scores.x;
+            document.getElementById('score-o').textContent = scores.o;
+            document.getElementById('score-draw').textContent = scores.draws;
+        }
+
+        function newGame() {
+            board = [null, null, null, null, null, null, null, null, null];
+            isXNext = true;
+            gameActive = true;
+            statusDiv.textContent = 'Next: X';
+            statusDiv.className = 'status';
+            
+            cells.forEach(function(cell) {
+                cell.textContent = '';
+                cell.classList.remove('x', 'o');
+                cell.disabled = false;
+            });
+        }
+
+        function resetScores() {
+            scores.x = 0;
+            scores.o = 0;
+            scores.draws = 0;
+            updateScores();
+            newGame();
+        }
+    </script>
+</body>
+</html>

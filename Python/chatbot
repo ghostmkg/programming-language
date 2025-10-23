@@ -1,0 +1,22 @@
+from chatterbot import ChatBot
+import chatterbot
+  
+
+from chatterbot.trainers import ChatterBotCorpusTrainer
+ 
+  
+
+chatbot=chatterbot('corona bot')
+ 
+
+trainer = ChatterBotCorpusTrainer(chatbot)
+  
+
+trainer.train("chatterbot.corpus.english.greetings",
+              "chatterbot.corpus.english.conversations" )
+  
+response = chatbot.get_response('What is your Number')
+print(response)
+ 
+response = chatbot.get_response('Who are you?')
+print(response)

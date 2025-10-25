@@ -49,10 +49,9 @@ int main() {
     head->next->next->next->next->next = head->next;
 
     if (detectCycle(head))
-        cout << "Cycle detected in the linked list.\n";
+        cout << "Cycle detected in the linked list using detection algorithm.\n";
     else
         cout << "No cycle detected.\n";
 
     return 0;
 }
-//Final check

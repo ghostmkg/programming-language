@@ -70,13 +70,13 @@ buttons_data = [
     ('2', 4, 1, 1, BG_DEFAULT, lambda: click_button('2')), 
     ('3', 4, 2, 1, BG_DEFAULT, lambda: click_button('3')), 
     ('+', 4, 3, 1, BG_OPERATOR, lambda: click_button('+')),
-    ('0', 5, 0, 2, BG_DEFAULT, lambda: click_button('0')), # Span 2 columns
+    ('0', 5, 0, 2, BG_DEFAULT, lambda: click_button('0')),
     ('.', 5, 2, 1, BG_DEFAULT, lambda: click_button('.')), 
     ('=', 5, 3, 1, BG_EQUALS, calculate),
 ]
-for i in range(1, 6): # Rows 1 to 5
+for i in range(1, 6):
     root.grid_rowconfigure(i, weight=1)
-for i in range(4): # Columns 0 to 3
+for i in range(4):
     root.grid_columnconfigure(i, weight=1)
 
 for (text, row, col, colspan, bg_color, command) in buttons_data:
@@ -99,6 +99,4 @@ for (text, row, col, colspan, bg_color, command) in buttons_data:
     )
     if text == 'C':
         btn.grid(columnspan=3) 
-
-
 root.mainloop()

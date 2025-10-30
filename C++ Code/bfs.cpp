@@ -1,36 +1,33 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void BFS(int start, vector<vector<int>>& adj) {
-    int n = adj.size();
-    vector<bool> visited(n, false);
-    queue<int> q;
+// Cyclic Sort: works only for arrays containing numbers 1..N (no duplicates)
+void cyclicSort(vector<int> &arr) {
+    int i = 0;
+    int n = arr.size();
 
-    visited[start] = true;
-    q.push(start);
-
-    cout << "BFS Traversal: ";
-    while (!q.empty()) {
-        int node = q.front();
-        q.pop();
-        cout << node << " ";
-
-        for (int neighbor : adj[node]) {
-            if (!visited[neighbor]) {
-                visited[neighbor] = true;
-                q.push(neighbor);
-            }
+    while (i < n) {
+        int correctIndex = arr[i] - 1;  // correct position for arr[i]
+        if (arr[i] != arr[correctIndex]) {
+            swap(arr[i], arr[correctIndex]);
+        } else {
+            i++;
         }
     }
-    cout << endl;
 }
 
 int main() {
-    int n = 5;
-    vector<vector<int>> adj = {
-        {1, 2}, {0, 3, 4}, {0, 4}, {1}, {1, 2}
-    };
+    vector<int> arr = {3, 5, 2, 1, 4};
 
-    BFS(0, adj);
+    cout << "Original array:\n";
+    for (int x : arr) cout << x << " ";
+    cout << "\n";
+
+    cyclicSort(arr);
+
+    cout << "Sorted array:\n";
+    for (int x : arr) cout << x << " ";
+    cout << "\n";
+
     return 0;
 }

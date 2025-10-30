@@ -1,0 +1,22 @@
+name: base
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.10
+  - pip
+  - flake8
+  - pytest
+  - black
+  - isort
+  - mypy
+  - ipykernel
+  - jupyterlab
+  - requests
+  - numpy
+  - pandas
+  - pip:
+      - pre-commit
+      - pytest-cov
+      - rich

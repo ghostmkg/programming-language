@@ -1,0 +1,16 @@
+ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;max-width:900px;margin:24px auto;padding:0 16px;line-height:1.4}
+    header{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
+    h1{font-size:1.25rem;margin:0}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+    .card{border:1px solid #ddd;border-radius:12px;padding:12px}
+    .controls{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+    label{font-size:.9rem;color:#444}
+    input[type="number"],input[type="range"]{width:100%}
+    button{padding:10px 12px;border-radius:10px;border:1px solid #333;background:#111;color:#fff;cursor:pointer}
+    button.secondary{background:#fff;color:#111}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    figure{margin:0;display:flex;flex-direction:column;gap:8px}
+    .meta{font-size:.85rem;color:#555}
+    canvas,img{max-width:100%;border-radius:8px;border:1px dashed #bbb;background:#fafafa}
+    .muted{opacity:.8}
+    @media (max-width:800px){.row{grid-template-columns:1fr} .controls{grid-template-columns:1fr}}

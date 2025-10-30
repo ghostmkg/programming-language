@@ -1,0 +1,6 @@
+print('Hello world')
+ptint()
+print('My name is Sauhardya Das')
+print()
+print('I am in First year ')
+print()
